@@ -10,7 +10,6 @@ The client script is hardcoded to follow the moveServer component.
 > Usage
 
 The client script will try to keep up to the moving target with randomizing values resembling the current ping. The biggest issue is fluctuating velocities which the server might not be able to send in time to the client, which this project aims to reduce. 
-
 When the moving target reaches a static velocity, the client has no issue keeping up.
 
 > Todo
