@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class interpolate : MonoBehaviour
+public class client : MonoBehaviour
 {
     // todo: points instead of vel
 
