@@ -16,3 +16,5 @@ When the moving target reaches a static velocity, the client has no issue keepin
 This project is heavily unfinished and does not support anything on the Y or Z axis. The purpose is currently only to get an idea on implementation for future projects.
 
 When working on multiplayer games, it is important to be careful. In the event that the code is wrong, the players would get a worse experience compared to if there was no interpolation / extrapolation going on. The same thing applies for players who have fluctuating pings. Interpolation would be better in this case, excluding the extrapolation as it would result in a visual bug where it seems like players are running outside of bounds or that the players are moving at unnatural speeds. This leads to an unfair advantage as it could either expose player positions where they wouldn't be seen and give an invalid position.
+
+* This code is not ready for use as of now. A lot is hardcoded and was made with the intent of debugging for later versions.
