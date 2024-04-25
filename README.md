@@ -1,17 +1,17 @@
 # Unity2D Extrapolation & Interpolation sample
-> Instructions
+## Instructions
 
 * Add the "client" script to the follower object
 * Add the "moveServer" script to the moving target
 
 The client script is hardcoded to follow the moveServer component.
 
-> Usage
+## Usage
 
 The client script will try to keep up to the moving target with randomizing values resembling the current ping. The biggest issue is fluctuating velocities which the server might not be able to send in time to the client, which this project aims to reduce. 
 When the moving target reaches a static velocity, the client has no issue keeping up.
 
-> Issues
+## Issues
 
 This project is heavily unfinished and does not support anything on the Y or Z axis. The purpose is currently only to get an idea on implementation for future projects.
 
