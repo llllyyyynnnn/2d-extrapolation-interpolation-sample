@@ -12,10 +12,9 @@ public class client : MonoBehaviour
     float last_vel = 0;
     bool updated = false;
     float pingMs = 120;
-    private float measure_acceleration(float v1, float v0) 
-        => (v1 - v0) / Time.fixedDeltaTime; 
-    private float predict_updated_velocity(float current, float elapsed) 
-        => current + (measure_acceleration(current, last_vel) * elapsed); 
+    
+    private float measure_acceleration(float v1, float v0) => (v1 - v0) / Time.fixedDeltaTime; 
+    private float predict_updated_velocity(float current, float elapsed) => current + (measure_acceleration(current, last_vel) * elapsed); 
 
     private void Update()
     {
@@ -45,9 +44,12 @@ public class client : MonoBehaviour
                           (predict_updated_velocity(rb2d.velocity.x, pingSec) * Time.deltaTime));
 
         transform.position = new Vector3(new_pos, server.transform.position.y, 0);
-        if (updated) return;
+        
+        if (updated) 
+            return;
+            
         StartCoroutine(update_velocity(rb2d.velocity.x, pingSec));
-        pingMs = Random.Range(5, 30);
+        pingMs = Random.Range(5, 30); // simulate random ping fluctuation, the higher the value the less accurate it becomes
     }
 
     IEnumerator update_velocity(float val, float elapsed)
