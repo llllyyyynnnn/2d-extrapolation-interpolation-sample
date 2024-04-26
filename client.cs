@@ -29,16 +29,9 @@ public class client : MonoBehaviour
 
         float predicted_velocity = predict_updated_velocity(rb2d.velocity.x, pingSec);
         float velocity_diff = predicted_velocity / rb2d.velocity.x;
-        float set_velocity;
 
         float extrapolation_max_ping = 100;
         float ping_diff = pingMs / extrapolation_max_ping;
-
-        if (ping_diff > 1)
-            set_velocity = 0;
-        else
-            set_velocity = velocity_diff * rb2d.velocity.x * ping_diff;
-
 
         float new_pos = ( (transform.position.x + move) + 
                           (predict_updated_velocity(rb2d.velocity.x, pingSec) * Time.deltaTime));
